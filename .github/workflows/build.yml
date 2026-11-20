@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04 # a fixed image instead of ubuntu-latest (no migration notice)
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Read the version from the .toc file
         id: meta
@@ -40,7 +40,7 @@ jobs:
           ls -l dist
 
       - name: Upload
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.meta.outputs.zip }}
           path: dist/${{ steps.meta.outputs.zip }}
