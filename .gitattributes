@@ -1,0 +1,14 @@
+# Keep LF line endings everywhere, also on Windows (the original OneForAll files use LF;
+# WoW reads both). Stops Git's "LF will be replaced by CRLF" warnings.
+* text=auto eol=lf
+
+# Binary files: never touched
+*.png binary
+*.jpg binary
+*.tga binary
+*.blp binary
+*.ttf binary
+*.otf binary
+*.ogg binary
+*.mp3 binary
+*.zip binary

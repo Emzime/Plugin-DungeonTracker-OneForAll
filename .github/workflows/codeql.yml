@@ -1,0 +1,38 @@
+# Code scanning (CodeQL) for the repository's workflows: unsafe use of inputs, too broad permissions, untrusted
+# checkouts... CodeQL has no Lua analysis; the Lua files are checked by the Build workflow (luac -p).
+# Results: the "Security and quality" tab > Code scanning. Uses the advanced setup: leave CodeQL's "Default setup" off.
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * 1" # every Monday
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      security-events: write # upload the results
+      actions: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: actions
+          build-mode: none
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:actions"

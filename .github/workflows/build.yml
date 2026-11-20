@@ -1,0 +1,58 @@
+# Builds OneForAll_DungeonTracker-<version>.zip (the plugin's folder), ready to drop into Interface/AddOns.
+# - Every push and pull request: the zip is uploaded as a workflow artifact.
+# - A pushed tag starting with "v" (e.g. v1.0.1): the zip is also attached to a GitHub release.
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04 # a fixed image instead of ubuntu-latest (no migration notice)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Read the version from the .toc file
+        id: meta
+        run: |
+          version=$(grep -m1 '^## Version:' OneForAll_DungeonTracker/OneForAll_DungeonTracker.toc | sed 's/^## Version:[[:space:]]*//' | tr -d '\r')
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then label="$version"; else label="${version}-${GITHUB_SHA::7}"; fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "zip=OneForAll_DungeonTracker-${label}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Check Lua syntax
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lua5.1 > /dev/null
+          find OneForAll_DungeonTracker -name '*.lua' -print0 | xargs -0 -n 50 luac5.1 -p
+
+      - name: Package
+        run: |
+          mkdir -p dist
+          zip -qr -X "dist/${{ steps.meta.outputs.zip }}" OneForAll_DungeonTracker -x '*.DS_Store' '*/.git*'
+          ls -l dist
+
+      - name: Upload
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.meta.outputs.zip }}
+          path: dist/${{ steps.meta.outputs.zip }}
+
+      - name: Release (tags only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v3
+        with:
+          files: dist/${{ steps.meta.outputs.zip }}
+          name: Dungeon Tracker ${{ steps.meta.outputs.version }}
+          body: |
+            **Dungeon Tracker ${{ steps.meta.outputs.version }}**, a plugin for OneForAll.
+
+            `${{ steps.meta.outputs.zip }}`: put its `OneForAll_DungeonTracker` folder into `Interface/AddOns`.
+            It needs OneForAll with the plugin API: https://github.com/Emzime/OneForAll-API/releases
