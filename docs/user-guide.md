@@ -5,7 +5,7 @@ The Dungeon Tracker is a small window that follows your run in a dungeon or raid
 ## Install
 
 1. Install **OneForAll with the plugin API** ([releases](https://github.com/Emzime/OneForAll-API/releases)): its `OneForAll` folder replaces yours in `Interface/AddOns`.
-2. Download `OneForAll_DungeonTracker-<version>.zip` from this repository's [releases](https://github.com/Emzime/Plugin-DungeonTracker-OneForAll/releases).
+2. Download `OneForAll_DungeonTracker-<version>.zip` from this repository's [releases](https://github.com/Emzime/OneForAll-Plugin-DungeonTracker/releases).
 3. Close the game. Put its `OneForAll_DungeonTracker` folder into `Interface/AddOns`, next to `OneForAll`.
 4. Start the game. A gears button now appears in OneForAll's title bar: it opens the **Plugins** page, with the Dungeon Tracker's options.
 
