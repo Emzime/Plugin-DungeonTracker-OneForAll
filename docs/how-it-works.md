@@ -128,4 +128,4 @@ When a new run starts:
 - Code comments in English.
 - New texts go into `Locales.lua` for the 4 languages. English is the key.
 - Never write into what the API returns, and don't reach into OneForAll's own tables: everything goes through `OneForAllAPI`.
-- Raise `## Version:` in the `.toc` and tag the release with the same version (`v1.0.2`).
+- Raise `## Version:` in the `.toc` and tag the release with the same version (`v1.0.1`).

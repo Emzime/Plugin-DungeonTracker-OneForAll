@@ -3,7 +3,7 @@
 ## Notes: Plugin for OneForAll: killed bosses, time, XP and gold while you're in a dungeon or raid.
 ## Author: Emzime
 ## X-License: GPL-3.0-or-later
-## Version: 1.0.2
+## Version: 1.0.0
 ## IconTexture: Interface\Icons\INV_Misc_PocketWatch_01
 ## Dependencies: OneForAll
 ## SavedVariables: OneForAllDungeonTrackerDB
