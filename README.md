@@ -1,6 +1,6 @@
 # OneForAll – Dungeon Tracker
 
-A **plugin for [OneForAll](https://discord.gg/JSPUqw4g)**, the all-in-one WoW Forever companion by Smoergi: a small window that opens when you enter a dungeon or raid, shows the killed bosses, the time, the XP and the gold, and closes when you leave.
+A **plugin for [OneForAll](https://github.com/smoergi/OneForAll_Forever)**, the all-in-one WoW Forever companion by Smoergi: a small window that opens when you enter a dungeon or raid, shows the killed bosses, the time, the XP and the gold, and closes when you leave.
 
 > **Needs OneForAll with the plugin API:** [OneForAll – Plugin API](https://github.com/Emzime/OneForAll-API). It doesn't work with an OneForAll without the API. Screenshots were taken in game with a French client.
 
@@ -115,4 +115,4 @@ For a new version, raise `## Version:` in `OneForAll_DungeonTracker/OneForAll_Du
 ## Credits & license
 
 - **Dungeon Tracker** is licensed under **GPL-3.0-or-later** (`OneForAll_DungeonTracker/LICENSE.txt`). It is inspired by the Dungeon Journal tracker (its options and reset button). The code is new and built on OneForAll's own data, read through the plugin API.
-- **OneForAll** © Smoergi. Official OneForAll, support and suggestions: **https://discord.gg/JSPUqw4g**
+- **[OneForAll](https://github.com/smoergi/OneForAll_Forever)** © Smoergi. Official OneForAll, support and suggestions: **https://discord.gg/JSPUqw4g**
