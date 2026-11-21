@@ -12,7 +12,7 @@ For contributors, and for authors who want to see a real plugin built on the [On
 
 ## What it uses from the API
 
-The plugin reaches OneForAll only through `OneForAllAPI` (version 2 or later), and never writes into it.
+The plugin reaches OneForAll only through `OneForAllAPI` (version 1 or later), and never writes into it.
 
 | Need | API |
 |---|---|

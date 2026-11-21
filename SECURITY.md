@@ -6,7 +6,7 @@ Only the latest release gets fixes.
 
 | Version | Supported |
 |---|---|
-| Latest release (`1.0.1`) | ✅ |
+| Latest release (`1.0.2`) | ✅ |
 | Earlier releases | ❌ |
 
 ## What counts as a security issue here

@@ -26,7 +26,7 @@ local ADDON, NS = ...
 --     manual = opened by /ofa run, xp = mobs' XP, money = copper earned }
 
 local API = OneForAllAPI
-if not (API and type(API.VERSION) == "number" and API.VERSION >= 2) then
+if not (API and type(API.VERSION) == "number" and API.VERSION >= 1) then
   -- OneForAll without the plugin API (older than the version with API.lua): nothing to do
   print("|cffd8b46aOneForAll Dungeon Tracker:|r this OneForAll has no plugin API (OneForAllAPI). Update OneForAll.")
   return

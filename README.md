@@ -6,7 +6,7 @@ A **plugin for [OneForAll](https://discord.gg/JSPUqw4g)**, the all-in-one WoW Fo
 
 | Folder | What it is | Version |
 |---|---|---|
-| `OneForAll_DungeonTracker/` | The Dungeon Tracker plugin | `1.0.1` |
+| `OneForAll_DungeonTracker/` | The Dungeon Tracker plugin | `1.0.2` |
 
 ## Documentation
 
@@ -86,7 +86,7 @@ The plugin's options are on OneForAll's **Plugins** page (gears button in the ti
 
 | File | What it is |
 |---|---|
-| `OneForAll_DungeonTracker.toc` | `## Dependencies: OneForAll`, version `1.0.1`. |
+| `OneForAll_DungeonTracker.toc` | `## Dependencies: OneForAll`, version `1.0.2`. |
 | `Locales.lua` | The plugin's texts in Deutsch, Français, Español, Português (Brasil); English is the default. |
 | `DungeonTracker.lua` | The tracker: window, kill detection, XP and gold, reset detection, options and their part of the Plugins page, `/ofa run`. |
 
@@ -108,7 +108,7 @@ Saved data:
 
 `.github/workflows/build.yml` checks every Lua file and builds `OneForAll_DungeonTracker-<version>.zip`:
 - on every push and pull request, as a workflow artifact;
-- when a tag starting with `v` is pushed (e.g. `git tag v1.0.1 && git push --tags`), also as a GitHub release.
+- when a tag starting with `v` is pushed (e.g. `git tag v1.0.2 && git push --tags`), also as a GitHub release.
 
 For a new version, raise `## Version:` in `OneForAll_DungeonTracker/OneForAll_DungeonTracker.toc` and tag it the same way.
 
